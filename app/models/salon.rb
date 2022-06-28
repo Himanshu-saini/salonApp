@@ -2,11 +2,12 @@ class Salon < ApplicationRecord
 
   def self.get_details(params)
     resp = {:status => 400, :result => nil}
-    data = Salon.all
-    resp[:count] = data.count
-    params[:limit] = (params[:limit].nil?) ? 50:params[:limit].to_i
+    salon = Salon.all
+    salon = salon.where("company_name like '%#{params[:name]}%'") if params[:name].present?
+    resp[:count] = salon.count
+    params[:limit] = (params[:limit].nil?) ? 10:params[:limit].to_i
     params[:offset] = (params[:offset].nil?) ? 0:params[:offset].to_i
-    resp[:result] = data.limit(params[:limit]).offset(params[:offset]).map(&:serializable_hash)
+    resp[:result] = salon.select(:id, :company_name,:PAN_no,:address,:total_chairs).limit(params[:limit]).offset(params[:offset]).map(&:serializable_hash)
     resp[:click_more] = (params[:offset]+params[:limit]>=resp[:count])? false : true
     resp[:status] = 200
     return resp
