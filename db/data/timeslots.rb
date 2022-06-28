@@ -1,0 +1,15 @@
+def seed_timeslots
+  TimeSlot.create(slot: '09 AM - 10 AM')
+  TimeSlot.create(slot: '10 AM - 11 AM')
+  TimeSlot.create(slot: '11 AM - 12 PM')
+  TimeSlot.create(slot: '12 PM - 01 PM')
+  TimeSlot.create(slot: '01 PM - 02 PM')
+  TimeSlot.create(slot: '02 PM - 03 PM')
+  TimeSlot.create(slot: '03 PM - 04 PM')
+  TimeSlot.create(slot: '04 PM - 05 PM')
+  TimeSlot.create(slot: '05 PM - 06 PM')
+  TimeSlot.create(slot: '06 PM - 07 PM')
+  TimeSlot.create(slot: '07 PM - 08 PM')
+  TimeSlot.create(slot: '08 PM - 09 PM')
+  TimeSlot.create(slot: '09 PM - 10 PM')
+end
