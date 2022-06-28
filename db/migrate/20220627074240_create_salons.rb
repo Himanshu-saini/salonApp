@@ -1,6 +1,6 @@
-class CreateSalonDetails < ActiveRecord::Migration[6.1]
+class CreateSalons < ActiveRecord::Migration[6.1]
   def change
-    create_table :salon_details do |t|
+    create_table :salons do |t|
       t.string :company_name
       t.string :PAN_no
       t.string :address

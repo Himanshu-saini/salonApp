@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_27_074221) do
+ActiveRecord::Schema.define(version: 2022_06_27_074240) do
 
-  create_table "salon_details", charset: "latin1", force: :cascade do |t|
+  create_table "salons", charset: "latin1", force: :cascade do |t|
     t.string "company_name"
     t.string "PAN_no"
     t.string "address"
